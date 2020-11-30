@@ -1,0 +1,8 @@
+.loginInputField:focus {
+  outline: none;
+}
+.loginInputField {
+  /* font-size: 35px; */
+  height: 54px;
+  min-width: 100%;
+}

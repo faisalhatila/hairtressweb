@@ -1,0 +1,26 @@
+@import "../constants/fonts/fonts.css";
+
+.getStartButton {
+  font-family: var(--opensans-bold) !important;
+  background-color: #722526;
+  color: #f1af43;
+  width: 150px;
+  padding: 9px 0;
+  border-radius: 25px;
+}
+.getStartTagLine {
+  font-family: var(--opensans-bold) !important;
+  color: #000;
+}
+.recommendedProduct {
+  flex: 1;
+  /* border: solid 1px #ccc; */
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.recommendedProduct:hover {
+  box-shadow: 0px 3px 5px 0px #ccc;
+  transform: translateY(-5px);
+}
