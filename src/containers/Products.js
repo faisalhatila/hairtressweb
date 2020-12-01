@@ -10,7 +10,7 @@ import ServiceDesc from "../components/home/ServiceDesc";
 import HowItWorks from "../components/home/HowItWorks";
 import classes from "./RecommendedProduct.module.css";
 import image from "./homeHeaderCover.png";
-const RecommendedProduct = () => {
+const RecommendedProduct = (props) => {
   const product1 = [
     {
       id: 0,
@@ -80,6 +80,50 @@ const RecommendedProduct = () => {
       image: "assets/img/relevant/products/5.png",
     },
   ];
+  console.log("props",props.match)
+  // const handleSubmit = async (e) => {
+  //   console.log("Clicked");
+  //   e.preventDefault();
+  //   let urltoEditandAdd = `/all-products`;
+  //   try {
+  //     const responseData = await sendRequest(
+  //       `${process.env.REACT_APP_BACKEND_URL}${urltoEditandAdd}`,
+  //       "POST",
+  //       {
+  //         "Content-Type": "application/json",
+  //       },
+  //       JSON.stringify({
+  //         query: searchText,
+  //       })
+  //     );
+  //     console.log("responseData", responseData);
+  //     setProducts(responseData.products)
+  //   } catch (err) {
+  //     console.log(err.message);
+  //   }
+  // };
+  useEffect(() => {
+    console.log("useeffect rinning")
+    let urltoEditandAdd = `/all-products`;
+    try {
+      const responseData = await sendRequest(
+        `${process.env.REACT_APP_BACKEND_URL}${urltoEditandAdd}`,
+        "POST",
+        {
+          "Content-Type": "application/json",
+        },
+        JSON.stringify({
+          query: searchText,
+        })
+      );
+      console.log("responseData", responseData);
+      setProducts(responseData.products)
+    } catch (err) {
+      console.log(err.message);
+    }
+
+  }, [])
+
   return (
     <div>
       <HeaderCover image={image} />

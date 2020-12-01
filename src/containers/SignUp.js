@@ -100,8 +100,8 @@ const SignUp = () => {
           })
         );
         auth.login(responseData.userId, responseData.token);
-        history.go("/");
-        history.push("/");
+        // history.go("/");
+        history.push("/login");
         console.log(responseData);
         // console.log("res", responseData);
       } catch (err) {

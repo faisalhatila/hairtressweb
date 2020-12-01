@@ -3,30 +3,22 @@ import classes from "./HeaderCover.module.css";
 import search from "./search.svg";
 import { useAuth } from "../shared/hooks/auth-hooks";
 import { useHttpClient } from "../shared/hooks/http-hook";
+import { Link, Redirect } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 const HeaderCover = (props) => {
+  const history = useHistory();
   const { userId, token } = useAuth();
   const { isLoading, error, sendRequest, clearError } = useHttpClient();
   const [searchText, setSearchText] = useState("");
+  const [products, setProducts] = useState([]);
   const handleSubmit = async (e) => {
     console.log("Clicked");
     e.preventDefault();
-    let urltoEditandAdd = `/all-products`;
-    try {
-      const responseData = await sendRequest(
-        `${process.env.REACT_APP_BACKEND_URL}${urltoEditandAdd}`,
-        "POST",
-        {
-          "Content-Type": "application/json",
-        },
-        JSON.stringify({
-          query: searchText,
-        })
-      );
-      console.log("responseData", responseData);
-    } catch (err) {
-      console.log(err.message);
-    }
+    console.log("props", props)
+    // props.history.push('/recommeded-product', {
+    //   query: 'searchText'
+    // })
   };
   const handleChangeSearchText = (e) => {
     console.log("searchText", e.target.value);
@@ -73,27 +65,33 @@ const HeaderCover = (props) => {
               classes.headerCoverSearchDiv,
             ].join(" ")}
           >
-            <input
-              type="text"
-              className={classes.headerCoverSearchInputField}
-              placeholder="What your are looking for?"
-              value={searchText}
-              onChange={handleChangeSearchText}
-            />
-            <button
-              className={classes.headerSearchButton}
-              style={{
-                backgroundColor: "transparent",
-                border: "none",
-              }}
-              onClick={handleSubmit}
-            >
-              <img
-                className={classes.headerCoverSearchButton}
-                alt="search"
-                src={search}
+            <form onSubmit={props.submit} className="d-flex" style={{ flex: 1 }}>
+              <input
+                type="text"
+                className={classes.headerCoverSearchInputField}
+                placeholder="What your are looking for?"
+                value={props.searchText}
+                onChange={(e) => props.setSearch(e.target.value)}
               />
-            </button>
+              <button
+                className={classes.headerSearchButton}
+                style={{
+                  backgroundColor: "transparent",
+                  border: "none",
+                }}
+                type="submit"
+              // onClick={props.searchResult(searchText)}
+              >
+                {/* <Link to="/recommeded-product"> */}
+                <img
+                  className={classes.headerCoverSearchButton}
+                  alt="search"
+                  src={search}
+                />
+                {/* </Link> */}
+              </button>
+
+            </form>
           </div>
           <div>
             <label

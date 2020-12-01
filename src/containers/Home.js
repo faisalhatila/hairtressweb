@@ -10,10 +10,20 @@ import ServiceDesc from "../components/home/ServiceDesc";
 import HowItWorks from "../components/home/HowItWorks";
 import classes from "./Home.module.css";
 import image from "./homeHeaderCover.png";
-const HomeContainer = () => {
+const HomeContainer = (props) => {
+  const [searchText, setSearchText] = useState("");
+  const handleSubmit = async (e) => {
+    console.log("Clicked");
+    e.preventDefault();
+    console.log("props", props)
+    props.history.push('/recommeded-product', {
+      search: searchText
+    })
+  };
+
   return (
     <div>
-      <HeaderCover image={image} />
+      <HeaderCover image={image} searchText={searchText} setSearch={setSearchText} submit={handleSubmit} />
       <AboutTress />
       <ServiceDesc />
       <HowItWorks />
