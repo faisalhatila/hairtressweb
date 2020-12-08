@@ -2,26 +2,28 @@ import classes from "./ThirdQuestion.module.css";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
-
+import LowDensity from "./LowDensity.png";
+import MediumDensity from "./MediumDensity.png";
+import HighDensity from "./HighDensity.png";
 const ThirdQuestion = (props) => {
   const [selectStyle, setselectStyle] = useState();
   const hairStyles = [
     {
       id: 1,
       title: "Small",
-      image: "assets/img/relevant/quiz3/low.png",
+      image: LowDensity,
       answer: 1,
     },
     {
       id: 2,
       title: "Medium",
-      image: "assets/img/relevant/quiz3/medium.png",
+      image: MediumDensity,
       answer: 2,
     },
     {
       id: 3,
       title: "Large",
-      image: "assets/img/relevant/quiz3/high.png",
+      image: HighDensity,
       answer: 3,
     },
   ];

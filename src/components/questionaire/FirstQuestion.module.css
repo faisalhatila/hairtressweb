@@ -6,6 +6,7 @@
 }
 .questionContainer {
   background-color: #f6eae0;
+  /* background-color: rgb(136, 97, 97); */
   border: solid 2px #888;
   border-radius: 30px;
   height: 724px;

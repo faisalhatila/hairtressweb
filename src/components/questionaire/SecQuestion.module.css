@@ -6,7 +6,7 @@
   background-color: #f6eae0;
   border: solid 2px #888;
   border-radius: 30px;
-  height: 724px;
+  /* height: 724px; */
 }
 .selectOverlay {
   height: 82px;
@@ -28,8 +28,8 @@
   padding: 10px 30px;
   transition: all 0.3s ease;
   border-radius: 15px;
-  max-width: 228px;
-  max-height: 248px;
+  /* max-width: 228px;
+  max-height: 248px; */
 }
 .hairImage {
   max-width: 100%;

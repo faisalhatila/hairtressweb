@@ -1,6 +1,9 @@
 import classes from "./FourthQuestion.module.css";
 import React, { useState } from "react";
 import Swal from "sweetalert2";
+import HairProcessing from "./HairProcessing.jpg";
+import HairProcessing2 from "./HairProcessing2.jpg";
+import HairProcessing3 from "./HairProcessing3.jpg";
 
 const FourthQuestion = (props) => {
   const [selectStyle, setselectStyle] = useState();
@@ -8,19 +11,19 @@ const FourthQuestion = (props) => {
     {
       id: 1,
       title: "Low porosity",
-      image: "assets/img/relevant/quiz4/low.png",
+      image: HairProcessing,
       answer: 1,
     },
     {
       id: 2,
       title: "Medium porosity",
-      image: "assets/img/relevant/quiz4/medium.png",
+      image: HairProcessing2,
       answer: 2,
     },
     {
       id: 3,
       title: "High porosity",
-      image: "assets/img/relevant/quiz4/high.png",
+      image: HairProcessing3,
       answer: 3,
     },
   ];
@@ -73,6 +76,7 @@ const FourthQuestion = (props) => {
                   ].join(" ")}
                   key={i}
                   onClick={() => handleSelectedStyle(style)}
+                  title="lorem lorem"
                 >
                   <div className={classes.styleWrapperDiv}>
                     <div className="d-flex justify-content-center">

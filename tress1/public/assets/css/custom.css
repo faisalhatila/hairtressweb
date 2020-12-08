@@ -1,0 +1,1030 @@
+@import "./fonts.css";
+/*Universal Start*/
+
+.noMarginBottom {
+  margin-bottom: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--opensans-regular);
+}
+p,
+label,
+div,
+a {
+  font-family: var(--opensans-light);
+}
+.mt-6 {
+  margin-top: 4rem;
+}
+/* .headerCoverMainDiv {
+  margin-bottom: 5rem;
+} */
+/* .headerCoverDiv {
+  background-image: linear-gradient(
+      0deg,
+      rgba(6, 21, 76, 0.7),
+      rgba(6, 21, 76, 0.7)
+    ),
+    url(../img/ourservices/ourServicesHeader.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+} */
+/* .headerCoverHeaderDiv {
+  min-height: 450px;
+} */
+/* .headerCoverHeading {
+  color: #fff;
+  font-size: 55px;
+  font-weight: 600;
+} */
+.searchbarComponentMainDiv {
+  border: solid 1px #ccc;
+  padding: 12px 20px;
+  border-radius: 15px;
+}
+.searchbarComponentMainDiv > div:nth-child(1) {
+  flex: 1;
+}
+.searchbarComponentMainDiv > div:nth-child(1) > input {
+  border: none;
+  min-width: 100%;
+  font-size: 20px;
+}
+.searchbarComponentMainDiv > div:nth-child(1) > input:focus {
+  outline: none !important;
+}
+.filterSearchButton {
+  border: none;
+  background-color: transparent;
+}
+.filterSearchButton > i {
+  color: #e63c49;
+  font-size: 22px;
+}
+.blackFont {
+  color: #000;
+}
+.darkBlueFont {
+  color: #06154c;
+}
+/*Universal End*/
+/*Login Page Start*/
+.login-container {
+  min-width: 100%;
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50%;
+  margin-top: -16px;
+}
+.loginScreenRow1 {
+  transform: translateY(30%);
+}
+.loginPageFormDiv {
+  background-color: #fff;
+  padding: 15px 30px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px 2px;
+}
+.loginFacebookDiv {
+  background-color: #3b5998;
+  color: #fff;
+  border-radius: 16px;
+}
+.loginGoogleDiv {
+  background-color: #db3236;
+  color: #fff;
+  border-radius: 16px;
+}
+.loginEmail {
+  background-color: #fff;
+  color: #4267b2;
+  border: solid 1px #4267b2;
+  border-radius: 16px;
+}
+#orTitleDiv {
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  font-size: 28px;
+  position: relative;
+}
+#orTitleDiv::before {
+  content: "";
+  width: 100%;
+  border-bottom: solid 1px #000;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  z-index: 1;
+}
+.orTitle {
+  background-color: #fff; /* Same as the parents Background */
+  width: auto;
+  display: inline-block;
+  z-index: 3;
+  padding: 0 5px 0 5px;
+  color: #000;
+  position: relative;
+  font-family: calibri;
+  font-weight: lighter;
+  margin: 0;
+}
+/*Login Page End*/
+/*Login Form Page Start*/
+.loginFormInput {
+  min-width: 100%;
+  border: none;
+  border-bottom: solid 1px #888;
+}
+.loginFormForgetPasswordLabel {
+  border-bottom: solid 1px #888;
+  font-size: 13px;
+}
+.loginFormSubmitButton {
+  min-width: 100%;
+  border: none;
+  background-color: #ff6067;
+  color: #fff;
+  padding: 4px 0 4px 0;
+  border-radius: 16px;
+}
+#orTitleDiv2 {
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  font-size: 28px;
+  position: relative;
+}
+#orTitleDiv2::before {
+  content: "";
+  width: 100%;
+  border-bottom: solid 1px #000;
+  position: absolute;
+  left: 0;
+  top: 55%;
+  z-index: 1;
+}
+.orTitle2 {
+  background-color: #fff; /* Same as the parents Background */
+  width: auto;
+  display: inline-block;
+  z-index: 3;
+  padding: 0 5px 0 5px;
+  color: #000;
+  position: relative;
+  font-family: calibri;
+  font-weight: lighter;
+  margin: 0;
+  font-size: 12px;
+}
+.facebookIcon {
+  color: #3b5998;
+}
+.googleIcon {
+  color: #db3236;
+}
+.joinCommunity {
+  font-size: 13px;
+}
+.underLineText {
+  text-decoration: underline;
+}
+
+/*Login Form Page End*/
+/*Navbar Start*/
+.logoText {
+  color: #fff;
+}
+.headerDiv {
+  background-color: rgb(114, 37, 38, 0.9);
+}
+.facebookHeaderIcon {
+  color: #06154c;
+  background-color: #fff;
+  padding: 3px 7px;
+  border-radius: 50%;
+}
+.linkedInHeaderIcon {
+  color: #06154c;
+  background-color: #fff;
+  padding: 3px 5px;
+  border-radius: 50%;
+}
+.twitterInHeaderIcon {
+  color: #06154c;
+  background-color: #fff;
+  padding: 3px 5px;
+  border-radius: 50%;
+}
+#navBarThirdRow {
+  margin: 0;
+}
+
+@media only screen and (min-width: 769px) {
+  #navBarThirdRow {
+    margin: 0;
+    padding: 0 40px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .navbarThirdRowContainer {
+    position: fixed;
+    min-width: 100vw;
+    background-color: #7b2e2d;
+    top: 0;
+    z-index: 1;
+  }
+}
+/*Navbar End*/
+/*Home Page*/
+.homePageCityImage {
+  max-width: 100%;
+}
+.coldBrewHeading {
+  font-weight: 600;
+  color: #06154c;
+  font-size: 60px;
+}
+.coldBrewSlogan {
+  color: #06154c;
+  font-size: 30px;
+}
+.coldBrewTagline {
+  color: #5796f7;
+  font-size: 23.3px;
+}
+.homePageVisionImage {
+  max-width: 150px;
+}
+.ourVisionHeading {
+  color: #06154c;
+  font-family: serif;
+  font-size: 31px;
+  font-weight: 500;
+}
+.ourVisionPara {
+  color: #000;
+  font-family: serif;
+}
+.addonsCoreIcon {
+  font-size: 30px;
+  background-color: #e63c49;
+  padding: 15px 10px;
+  border-radius: 50%;
+  color: #06154c;
+}
+.addonsAddonIcon {
+  font-size: 30px;
+  background-color: #e63c49;
+  padding: 12px 10px;
+  border-radius: 50%;
+  color: #06154c;
+}
+.addonsAddonIconImage {
+  font-size: 30px;
+  background-color: #e63c49;
+  padding: 21px 13px;
+  border-radius: 50%;
+  color: #06154c;
+}
+.addonsCoreIcon {
+  font-size: 30px;
+  background-color: #e63c49;
+  padding: 15px 10px;
+  border-radius: 50%;
+  color: #06154c;
+}
+.addonsCoreIconImage {
+  font-size: 30px;
+  background-color: #e63c49;
+  padding: 21px 22px;
+  border-radius: 50%;
+  color: #06154c;
+}
+.addonsCoreHeading {
+  color: #06154c;
+  font-family: serif;
+  font-size: 23px;
+  font-weight: 600;
+}
+.addonsBullets {
+  color: #000;
+  font-weight: 500;
+  font-family: serif;
+  font-size: 18px;
+}
+.industriesImages {
+  max-width: 100%;
+  width: 380px;
+  height: 195px;
+}
+.image-box {
+  position: relative;
+  margin: auto;
+  overflow: hidden;
+  /* width: 540px; */
+  cursor: pointer;
+  height: 194px;
+}
+.image-box img {
+  max-width: 100%;
+  transition: all 0.3s;
+  display: block;
+  width: 100%;
+  height: 195px;
+  transform: scale(1);
+}
+.industriesMainTile:hover img {
+  transform: scale(1.1);
+}
+.image-box:hover img {
+  transform: scale(1.1);
+}
+.industriesTitle {
+  min-width: 100%;
+  text-align: center;
+  background-color: #06154c;
+  color: #fff;
+}
+.industriesMainHeading {
+  color: #06154c;
+  font-family: serif;
+  font-size: 31px;
+  font-weight: 500;
+}
+.industriesMainPara {
+  color: #5796f7;
+  font-size: 16px;
+}
+.industriesTilesHeading {
+  padding-top: 75px;
+  padding-bottom: 75px;
+}
+.homePageMentorButton,
+.homePageSignUpButton {
+  background-color: #e63c49;
+  color: #fff;
+  min-width: 280px;
+  padding: 29px 0;
+  font-size: 26px;
+  text-align: center;
+  border-radius: 10px;
+  cursor: pointer;
+}
+/*Hove Sweep Right*/
+.hvr-sweep-to-right {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+[class^="hvr-"] {
+  margin: 0.4em;
+  padding: 1em;
+  cursor: pointer;
+  background: #e1e1e1;
+  text-decoration: none;
+  color: #666;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+/* p,
+[class^="hvr-"] {
+  font-family: "Roboto", sans-serif;
+} */
+.hvr-sweep-to-right:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #06154c;
+  border-radius: 10px;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transform-origin: 0 50%;
+  transform-origin: 0 50%;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-sweep-to-right:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #06154c;
+  border-radius: 10px;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transform-origin: 0 50%;
+  transform-origin: 0 50%;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-sweep-to-right:hover,
+.hvr-sweep-to-right:focus,
+.hvr-sweep-to-right:active {
+  color: white;
+}
+.hvr-sweep-to-right:hover:before,
+.hvr-sweep-to-right:focus:before,
+.hvr-sweep-to-right:active:before {
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+@media only screen and (max-width: 768px) {
+  .firstComponentHomeContainer {
+    margin-top: 130px !important;
+  }
+}
+/*Home Page*/
+/*Footer Start*/
+/* .footerMainDiv {
+  background-color: #06154c;
+} */
+.footerLogoText {
+  color: #fff;
+}
+.footerNavLink {
+  color: #fff;
+}
+.footerFacebookIcon {
+  color: #06154c;
+  background-color: #fff;
+  padding: 6px 10px;
+  border-radius: 50%;
+}
+.footerTwitterIcon {
+  color: #06154c;
+  background-color: #fff;
+  padding: 6px 7px;
+  border-radius: 50%;
+}
+.footerLinkedinIcon {
+  color: #06154c;
+  background-color: #fff;
+  padding: 5px 8px;
+  border-radius: 50%;
+}
+.footerLine {
+  color: #fff;
+  font-size: 12px;
+}
+/*Footer End*/
+
+/*About Us Header*/
+.aboutHeaderMainDiv {
+  background-color: #06154c;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+.headerImage {
+  max-width: 100%;
+  height: 480px;
+  width: 530px;
+  transform: translate(20px, -130px);
+}
+.aboutUsHeaderBackImageDiv {
+  background-image: url(../img/about/aboutHeader1.jpeg);
+  min-height: 450px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  transform: translateY(-100px);
+}
+.aboutUsMainHeading {
+  color: #fff;
+  font-size: 70px;
+  font-weight: 600;
+}
+.aboutUsTagLine {
+  color: #fff;
+  font-size: 32px;
+}
+.aboutUsPara {
+  font-style: italic;
+  color: #fff;
+  font-size: 15px;
+}
+.howItWorksImage {
+  max-width: 100%;
+}
+.howItWorksHeading,
+.ourMentorHeading,
+.ourTeamHeading {
+  color: #06154c;
+}
+.teamMemberName {
+  color: #06154c;
+  font-weight: 600;
+  font-size: 31px;
+}
+.teamMemberLabel {
+  color: #5796f7;
+  font-size: 19px;
+}
+.teamMemberFacebook {
+  color: #fff;
+  background-color: #3b5998;
+  padding: 6px 9px;
+  border-radius: 50%;
+}
+.teamMemberTwitter {
+  color: #fff;
+  background-color: #00acee;
+  padding: 6px 6px 6px 7px;
+  border-radius: 50%;
+}
+.teamMemberLinkedin {
+  color: #fff;
+  background-color: #0e76a8;
+  padding: 6px 6px 6px 7px;
+  border-radius: 50%;
+}
+.ourMentorsMainDiv {
+  background-color: #fdf1f2;
+}
+.mentorLogoDiv {
+  box-shadow: 0px 0px 5px 2px #ccc;
+  border-radius: 5px;
+}
+.logoImage {
+  max-width: 100%;
+}
+/*About Us Header*/
+/*Our Services*/
+/* .ourServicesMainDiv {
+  margin-bottom: 5rem;
+  background-image: linear-gradient(
+      0deg,
+      rgba(6, 21, 76, 0.7),
+      rgba(6, 21, 76, 0.7)
+    ),
+    url(../img/ourservices/ourServicesHeader.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.ourServicesHeaderDiv {
+  min-height: 450px;
+}
+.ourServicesHeading {
+  color: #fff;
+  font-size: 55px;
+  font-weight: 600;
+} */
+.careerNeedDescDiv {
+  background-color: #06154c;
+  color: #fff;
+  width: 230px;
+  padding: 8px;
+  border-radius: 15px;
+}
+.careerNeedsHeading {
+  color: #06154c;
+  font-size: 28px;
+}
+.careerNeedsPara {
+  color: #00acee;
+  font-size: 13px;
+  text-align: center;
+  line-height: 1;
+}
+.coreGroupSessionHeading {
+  color: #06154c;
+  font-size: 28px;
+  text-decoration: underline;
+}
+.groupSessionTagLine {
+  color: #06154c;
+  font-size: 22px;
+}
+.individualServicePara {
+  font-size: 18px;
+  color: #000;
+}
+.individualServiceLi {
+  color: #06154c;
+  font-size: 26px;
+  font-weight: 500;
+}
+.individualServiceLi2 {
+  color: #06154c;
+  font-size: 22px;
+  font-weight: 500;
+}
+.coreGroupSessionImage,
+.indicudualServicesImage {
+  max-width: 100%;
+}
+/*Our Services*/
+/*Our Crew*/
+.ourCrewImage {
+  max-width: 100%;
+}
+.ourCompaniesHeading {
+  color: #06154c;
+}
+.ourCompaniesTagLine {
+  color: #0061f2;
+}
+.searchProcessMainDiv {
+  background-color: #fdf1f2;
+}
+.ourDecisionsHeading {
+  color: #06154c;
+}
+.bookASessionDiv {
+  background-color: #e48f95;
+  color: #fff;
+  padding: 45px 20px;
+}
+.bookASessionDiv > h1 {
+  font-size: 35px;
+}
+.bookNowDiv {
+  background-color: #06154c;
+  color: #fff;
+  padding: 30px 10px;
+}
+/*Our Crew*/
+/*Resources*/
+.technologyCoverImageMainDiv {
+  margin-bottom: 5rem;
+  background-image: linear-gradient(
+      0deg,
+      rgba(6, 21, 76, 0.7),
+      rgba(6, 21, 76, 0.7)
+    ),
+    url(../img/resources/technologyCover.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.technologyTileCoverImageDiv {
+  /* margin-bottom: 5rem; */
+  background-image: url(../img/resources/technology.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 175px;
+}
+.technologyCoverHeaderDiv {
+  min-height: 200px;
+}
+.technologyCoverHeading {
+  color: #fff;
+  font-size: 55px;
+  font-weight: 600;
+}
+.technologyTileHeading {
+  font-size: 26px;
+  color: #000;
+  font-weight: 600;
+}
+.technologyTileContentDiv {
+  background-color: #f6dbdd;
+}
+.technologyTileContentDiv > ul > li {
+  color: #000;
+  font-size: 12px;
+}
+.technologyTileButton {
+  flex: 12;
+  background-color: #06154c;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+}
+/**/
+.financeCoverImageMainDiv {
+  margin-bottom: 5rem;
+  background-image: linear-gradient(
+      0deg,
+      rgba(6, 21, 76, 0.7),
+      rgba(6, 21, 76, 0.7)
+    ),
+    url(../img/resources/financeCover.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.financeTileCoverImageDiv {
+  /* margin-bottom: 5rem; */
+  background-image: url(../img/resources/finance.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 175px;
+}
+.financeCoverHeaderDiv {
+  min-height: 200px;
+}
+.financeCoverHeading {
+  color: #fff;
+  font-size: 55px;
+  font-weight: 600;
+}
+.financeTileHeading {
+  font-size: 26px;
+  color: #000;
+  font-weight: 600;
+}
+.financeTileContentDiv {
+  background-color: #f6dbdd;
+}
+.financeTileContentDiv > ul > li {
+  color: #000;
+  font-size: 12px;
+}
+.financeTileButton {
+  flex: 12;
+  background-color: #06154c;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+}
+/**/
+.accountingCoverImageMainDiv {
+  margin-bottom: 5rem;
+  background-image: linear-gradient(
+      0deg,
+      rgba(6, 21, 76, 0.7),
+      rgba(6, 21, 76, 0.7)
+    ),
+    url(../img/resources/accountingCover.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.accountingTileCoverImageDiv {
+  /* margin-bottom: 5rem; */
+  background-image: url(../img/resources/accounting.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 175px;
+}
+.accountingCoverHeaderDiv {
+  min-height: 200px;
+}
+.accountingCoverHeading {
+  color: #fff;
+  font-size: 55px;
+  font-weight: 600;
+}
+.accountingTileHeading {
+  font-size: 26px;
+  color: #000;
+  font-weight: 600;
+}
+.accountingTileContentDiv {
+  background-color: #f6dbdd;
+}
+.accountingTileContentDiv > ul > li {
+  color: #000;
+  font-size: 12px;
+}
+.accountingTileButton {
+  flex: 12;
+  background-color: #06154c;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+}
+/**/
+.healthCareCoverImageMainDiv {
+  margin-bottom: 5rem;
+  background-image: linear-gradient(
+      0deg,
+      rgba(6, 21, 76, 0.7),
+      rgba(6, 21, 76, 0.7)
+    ),
+    url(../img/resources/healthCareCover.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.healthCareTileCoverImageDiv {
+  /* margin-bottom: 5rem; */
+  background-image: url(../img/resources/healthCare.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 175px;
+}
+.healthCareCoverHeaderDiv {
+  min-height: 200px;
+}
+.healthCareCoverHeading {
+  color: #fff;
+  font-size: 55px;
+  font-weight: 600;
+}
+.healthCareTileHeading {
+  font-size: 26px;
+  color: #000;
+  font-weight: 600;
+}
+.healthCareTileContentDiv {
+  background-color: #f6dbdd;
+}
+.healthCareTileContentDiv > ul > li {
+  color: #000;
+  font-size: 12px;
+}
+.healthCareTileButton {
+  flex: 12;
+  background-color: #06154c;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+}
+/*Resources*/
+/*Community*/
+.filterButtons {
+  color: #fff;
+  background-color: #06154c;
+  padding: 7px 0;
+  width: 110px;
+  text-align: center;
+  border-radius: 8px;
+}
+.communityClientsMainDiv {
+  background-color: rgb(248, 198, 202);
+}
+.clientsLogoRow {
+  padding: 15px 0 15px 0px;
+}
+.postTileCoverImageDiv {
+  background-image: url(../img/community/engineering.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 172px;
+}
+.postTileContentDiv {
+  background-color: #f6dbdd;
+}
+.postTileHeading {
+  font-size: 26px;
+  color: #000;
+  font-weight: 600;
+}
+.postTileContentDiv > div > ul > li {
+  color: #000;
+  font-size: 12px;
+}
+.postTileButton {
+  flex: 12;
+  background-color: #06154c;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+}
+.recentPostHeading {
+  color: #06154c;
+  font-family: serif;
+  font-size: 31px;
+  font-weight: 500;
+}
+.recentPostImage {
+  max-width: 100%;
+}
+.recentPostTileMainDiv {
+  background-color: #f6dbdd;
+}
+.recentPostTileHeading {
+  font-size: 26px;
+  color: #000;
+  font-weight: 600;
+}
+.recentPostTagLine,
+.recentPostPara {
+  color: #06154c;
+  font-size: 15px;
+}
+.recentPostComment {
+  font-size: 12px;
+  color: #da6e6e;
+}
+.recentPostReadMoreButton {
+  color: #fff;
+  background-color: #06154c;
+  font-size: 11px;
+  padding: 3px 5px;
+  border-radius: 5px;
+}
+.paginationPageNo {
+  border: solid 1px #ccc;
+  padding: 0px 10px;
+  border-right: none;
+}
+.paginationLastButton {
+  background-color: #e63c49;
+  color: #fff;
+  padding: 3px 13px;
+  border-radius: 5px;
+}
+.enterPageNoInput {
+  width: 35px;
+  border: none;
+  background-color: #f6dbdd;
+  text-align: center;
+}
+.enterPageNoInput:focus {
+  outline: none !important;
+}
+/*Community*/
+/*Community Post*/
+.addCommentBoxMainDiv {
+  background-color: #f6dbdd;
+  padding: 20px 30px;
+  border-radius: 25px;
+}
+.addCommentBoxDiv {
+  background-color: #fff;
+  border: solid 1px #ccc;
+  border-radius: 25px;
+}
+.submitCommentButton {
+  background-color: #06154c;
+  color: #fff;
+  padding: 7px 0;
+  border-radius: 10px;
+  min-width: 150px;
+  transform: translateY(18px);
+}
+.addCommentTextArea {
+  resize: none;
+  border: none;
+  border-radius: 25px;
+}
+.addCommentTextArea:focus {
+  box-shadow: none;
+}
+.postDetailRightDivHeading {
+  font-size: 25px;
+  font-weight: 600;
+}
+.postDetailRightDivContent {
+  font-size: 13px;
+  color: #7979e4;
+}
+.contactFormInputDiv {
+  box-shadow: 0px 0px 5px 2px #ccc;
+  border-radius: 5px;
+}
+.contactFormInputField {
+  min-width: 100%;
+  border: none;
+  padding: 8px;
+  resize: none;
+}
+.contactFormInputField:focus {
+  outline: none !important;
+}
+.contactFormSubmitButton {
+  background-color: #e63c49;
+  color: #fff;
+  padding: 5px 9px;
+  border-radius: 5px;
+}
+/*Community Post*/
+.tressNavItems:hover {
+  color: #f1af43;
+}

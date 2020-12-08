@@ -5,6 +5,18 @@ const FirstQuestion = (props) => {
   const [selectStyle, setselectStyle] = useState();
   const hairStyles = [
     {
+      id: 10,
+      title: "Straight",
+      image: "assets/img/relevant/quiz1/1A-1B.png",
+      answer: 1,
+    },
+    {
+      id: 11,
+      title: "Straight with Body",
+      image: "assets/img/relevant/quiz1/1C.png",
+      answer: 2,
+    },
+    {
       id: 1,
       title: "Wavy Swavy",
       image: "assets/img/relevant/quiz1/2A.png",
@@ -57,18 +69,6 @@ const FirstQuestion = (props) => {
       title: "Kinky Ziggly",
       image: "assets/img/relevant/quiz1/4C.png",
       answer: 11,
-    },
-    {
-      id: 10,
-      title: "Straight",
-      image: "assets/img/relevant/quiz1/1A-1B.png",
-      answer: 1,
-    },
-    {
-      id: 11,
-      title: "Straight with Body",
-      image: "assets/img/relevant/quiz1/1C.png",
-      answer: 2,
     },
   ];
   const handleSelectedStyle = (selectStyle) => {

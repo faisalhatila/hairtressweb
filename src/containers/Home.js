@@ -9,22 +9,28 @@ import AboutTress from "../components/home/AboutTress";
 import ServiceDesc from "../components/home/ServiceDesc";
 import HowItWorks from "../components/home/HowItWorks";
 import classes from "./Home.module.css";
+import image1 from "./1.jpg";
 import image from "./homeHeaderCover.png";
 const HomeContainer = (props) => {
   const [searchText, setSearchText] = useState("");
   const handleSubmit = async (e) => {
     console.log("Clicked");
     e.preventDefault();
-    console.log("props", props)
-    props.history.push('/recommeded-product', {
-      search: searchText
-    })
+    console.log("props", props);
+    props.history.push("/recommeded-product", {
+      search: searchText,
+    });
   };
 
   return (
     <div>
-      <HeaderCover image={image} searchText={searchText} setSearch={setSearchText} submit={handleSubmit} />
-      <AboutTress />
+      <HeaderCover
+        image={image1}
+        searchText={searchText}
+        setSearch={setSearchText}
+        submit={handleSubmit}
+      />
+      {/* <AboutTress /> */}
       <ServiceDesc />
       <HowItWorks />
       <div className="container mb-5">
@@ -35,25 +41,30 @@ const HomeContainer = (props) => {
             `align-items-center`,
           ].join(" ")}
         >
-          <label
-            className={[
-              `noMarginBottom`,
-              `text-center`,
-              classes.getStartButton,
-            ].join(" ")}
-          >
-            GET STARTED
-          </label>
-          <label
+          <div>
+            <Link to="/sign-up">
+              <p
+                className={[
+                  `noMarginBottom`,
+                  `text-center`,
+                  classes.getStartButton,
+                ].join(" ")}
+              >
+                GET STARTED
+              </p>
+            </Link>
+          </div>
+          {/* <label
             className={[
               `noMarginBottom`,
               `text-center`,
               `pt-3`,
               classes.getStartTagLine,
             ].join(" ")}
+            style={{ height: "33px" }}
           >
             We are here to help. Get in touch!
-          </label>
+          </label> */}
         </div>
       </div>
       {/* <CareerNeeds />

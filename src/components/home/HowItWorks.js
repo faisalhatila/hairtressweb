@@ -10,17 +10,15 @@ const HowItWorks = (props) => {
       image: "assets/img/relevant/howItWorks/login.svg",
       image1: "assets/img/relevant/howItWorks/login1.svg",
       title: "Login",
-      para:
-        "eu, excepteur nisl, sit congue, exercitation occaecat nullam bibendum ut risus hac laoreet lorem lorem, orci. nulla",
+      para: "Create your Tress account.",
     },
     {
       id: 2,
       count: 2,
       image: "assets/img/relevant/howItWorks/quiz.svg",
       image1: "assets/img/relevant/howItWorks/quiz1.svg",
-      title: "Quiz",
-      para:
-        "eu, excepteur nisl, sit congue, exercitation occaecat nullam bibendum ut risus hac laoreet lorem lorem, orci. nulla",
+      title: "Match",
+      para: "Take our 5-step quiz to learn your hair profile",
     },
     {
       id: 3,
@@ -29,7 +27,7 @@ const HowItWorks = (props) => {
       image1: "assets/img/relevant/howItWorks/match1.svg",
       title: "Quiz",
       para:
-        "eu, excepteur nisl, sit congue, exercitation occaecat nullam bibendum ut risus hac laoreet lorem lorem, orci. nulla",
+        "Check out the hair care resources recommended for your hair profile!",
     },
   ];
   const handleHoverImage = (item) => {
@@ -46,8 +44,8 @@ const HowItWorks = (props) => {
         classes.howItWordksMainDiv,
       ].join(" ")}
     >
-      <h2 className={[`text-center`, classes.mainHeading].join(" ")}>
-        How does it Works?
+      <h2 className={[`text-center`, `mb-5`, classes.mainHeading].join(" ")}>
+        How does it work?
       </h2>
       <div className="row">
         {howWorks.map((item, i) => {

@@ -40,9 +40,9 @@
   background-color: #722526;
   color: #f1af43;
   font-size: 15px;
-  width: 90px;
+  width: 130px;
   border-radius: 20px;
-  padding: 2px;
+  padding: 8px 2px;
   transition: all 0.3s ease;
   cursor: pointer;
 }
@@ -68,4 +68,11 @@
 }
 .iconDiv:hover .socialIcon {
   color: #f1af43;
+}
+.sendEmailButton {
+  color: #f1af43 !important;
+  font-size: 20px;
+}
+.sendEmailButton:hover {
+  color: #722526 !important;
 }

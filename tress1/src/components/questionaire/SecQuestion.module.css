@@ -1,0 +1,53 @@
+@import "../../constants/fonts/fonts.css";
+.question {
+  color: #722526;
+}
+.questionContainer {
+  background-color: #f6eae0;
+  border: solid 2px #888;
+  border-radius: 30px;
+  height: 724px;
+}
+.selectOverlay {
+  height: 82px;
+  width: 82px;
+  background-color: #000;
+  border-radius: 50%;
+  position: absolute;
+  opacity: 0.5;
+  top: 30%;
+}
+.selectOverlay > i {
+  font-size: 25px;
+  color: #fff;
+}
+.hairStyleDiv {
+  cursor: pointer;
+}
+.styleWrapperDiv {
+  padding: 10px 30px;
+  transition: all 0.3s ease;
+  border-radius: 15px;
+  max-width: 228px;
+  max-height: 248px;
+}
+.hairImage {
+  max-width: 100%;
+}
+
+.hairStyleDiv:hover .styleWrapperDiv {
+  background-color: #fdefef;
+}
+.optionTitle {
+  color: #8e5051;
+  font-family: var(--opensans-bold) !important;
+  cursor: pointer;
+}
+.nextButton {
+  background-color: #722526;
+  font-family: var(--opensans-bold) !important;
+  color: #f1af43;
+  width: 150px;
+  padding: 4px 0;
+  border-radius: 25px;
+}

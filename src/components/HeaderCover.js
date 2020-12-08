@@ -15,7 +15,7 @@ const HeaderCover = (props) => {
   const handleSubmit = async (e) => {
     console.log("Clicked");
     e.preventDefault();
-    console.log("props", props)
+    console.log("props", props);
     // props.history.push('/recommeded-product', {
     //   query: 'searchText'
     // })
@@ -46,16 +46,17 @@ const HeaderCover = (props) => {
             `align-items-center`,
             classes.headerCoverHeaderDiv,
           ].join(" ")}
+          style={{ minHeight: "80vh" }}
         >
           <h1
             className={[`noMarginBottom`, classes.headerCoverHeading].join(" ")}
           >
-            Protect your hair
+            Easy. Efficient. Economical
           </h1>
           <label
             className={[`noMarginBottom`, classes.headerCoverLabel].join(" ")}
           >
-            WE PROVIDE YOU SOLUTION
+            Because it’s personal
           </label>
           <div
             className={[
@@ -65,22 +66,30 @@ const HeaderCover = (props) => {
               classes.headerCoverSearchDiv,
             ].join(" ")}
           >
-            <form onSubmit={props.submit} className="d-flex" style={{ flex: 1 }}>
+            <form
+              onSubmit={props.submit}
+              className="d-flex"
+              style={{ flex: 1 }}
+            >
               <input
                 type="text"
                 className={classes.headerCoverSearchInputField}
-                placeholder="What your are looking for?"
+                placeholder="What are you looking for?"
                 value={props.searchText}
                 onChange={(e) => props.setSearch(e.target.value)}
               />
               <button
-                className={classes.headerSearchButton}
+                className={[
+                  classes.headerSearchButton,
+                  "d-flex",
+                  "align-items-center",
+                ].join(" ")}
                 style={{
                   backgroundColor: "transparent",
                   border: "none",
                 }}
                 type="submit"
-              // onClick={props.searchResult(searchText)}
+                // onClick={props.searchResult(searchText)}
               >
                 {/* <Link to="/recommeded-product"> */}
                 <img
@@ -90,10 +99,9 @@ const HeaderCover = (props) => {
                 />
                 {/* </Link> */}
               </button>
-
             </form>
           </div>
-          <div>
+          {/* <div>
             <label
               className={[
                 `noMarginBottom`,
@@ -102,7 +110,17 @@ const HeaderCover = (props) => {
             >
               Register
             </label>
-          </div>
+          </div> */}
+          {/* {!token &&<div>
+            <label
+              className={[
+                `noMarginBottom`,
+                classes.headerCoverRegisterButton,
+              ].join(" ")}
+            >
+              Register
+            </label>
+          </div>} */}
         </div>
       </div>
       {props.children}

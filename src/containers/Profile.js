@@ -17,6 +17,9 @@ import { AuthContext } from "../shared/context/index";
 import { useHistory } from "react-router-dom";
 import Input from "../shared/UI/Input";
 import LoadingSpinner from "../shared/UI/LoadingSpinner";
+import Camera from "./Camera.png";
+import AWS from "aws-sdk";
+import S3FileUpload from "react-s3";
 const FORM_INPUT_UPDATE = "FORM_INPUT_UPDATE";
 const formReducer = (state, action) => {
   if (action.type === FORM_INPUT_UPDATE) {
@@ -53,20 +56,24 @@ const Profile = () => {
   const { userId, token } = useAuth();
   const history = useHistory();
   const myData = JSON.parse(localStorage.getItem("userDatas"));
+  const [imageUpload, setimageUpload] = useState(
+    "https://cdn1.iconfinder.com/data/icons/avatar-97/32/avatar-02-512.png"
+  );
+  const [newImage, setNewImage] = useState(false);
   const [formState, dispatchFormState] = useReducer(formReducer, {
     inputValues: {
       email: "",
       firstName: "",
       lastName: "",
       address: "",
-      phone: "",
+      // phone: "",
     },
     inputValidities: {
       email: false,
       firstName: false,
       lastName: false,
       address: false,
-      phone: false,
+      // phone: false,
     },
     formIsValid: false,
   });
@@ -109,6 +116,7 @@ const Profile = () => {
           "POST",
           {
             "Content-Type": "application/json",
+            Authorization: "Bearer " + token,
           },
           JSON.stringify({
             userId,
@@ -155,6 +163,40 @@ const Profile = () => {
       }
     }
   };
+  const handleUploadImage = async (e) => {
+    const file = e.target.files[0];
+    setimageUpload(URL.createObjectURL(file));
+    setNewImage(true);
+    console.log(URL.createObjectURL(file));
+    const base64 = await convertToBase64(file);
+    // console.log("base64", base64);
+    const ID = "AKIAJP3OXKCZZTES7T4Q";
+    const SECRET = "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";
+    const BUCKET_NAME_IMAGES = "images-rizipt";
+    const BUCKET_REGION = "US West (N. California) us-west-1";
+
+    const config = {
+      bucketName: BUCKET_NAME_IMAGES,
+      region: BUCKET_REGION,
+      accessKeyId: ID,
+      secretAccessKey: SECRET,
+    };
+    S3FileUpload.uploadFile(file, config)
+      .then((data) => console.log("dataLocation", data.location))
+      .catch((err) => console.log("error", err));
+  };
+  const convertToBase64 = (file) => {
+    return new Promise((resolve, reject) => {
+      const fileReader = new FileReader();
+      fileReader.readAsDataURL(file);
+      fileReader.onload = () => {
+        resolve(fileReader.result);
+      };
+      fileReader.onerror = (error) => {
+        reject(error);
+      };
+    });
+  };
   // useEffect(() => {
   //   console.log("hello bhai", userId);
   //   const getData = async () => {
@@ -186,7 +228,7 @@ const Profile = () => {
           "POST",
           {
             "Content-Type": "application/json",
-            // Authorization: "Bearer " + token,
+            Authorization: "Bearer " + token,
           },
           JSON.stringify({
             userId,
@@ -221,9 +263,56 @@ const Profile = () => {
         >
           <div className={[`col-6`, `col-md-3`].join(" ")}>
             <div className={classes.profileImageDiv}>
-              <img
-                alt="User"
-                src="assets/img/relevant/profile/profileImage.png"
+              <label
+                htmlFor="imageUpload"
+                title="Click to upload new image"
+                style={{
+                  cursor: "pointer",
+                  // border: "solid 2px rgb(114, 37, 38, 0.9)",
+                  // borderRadius: "50%",
+                  display: "flex",
+                }}
+              >
+                <div style={{ width: "100%" }}>
+                  {/* <img
+                    alt="User"
+                    // src="assets/img/relevant/profile/profileImage.png"
+                    // src="https://cdn1.iconfinder.com/data/icons/avatar-97/32/avatar-02-512.png"
+                    src={imageUpload} // onClick={handleUploadImage}
+                    style={{
+                      width: "100%",
+                      // minWidth: "255px",
+                      height: "255px",
+                      borderRadius: "50%",
+                    }}
+                  /> */}
+                  <div
+                    style={{
+                      backgroundImage: `url(${imageUpload})`,
+                      width: "100%",
+                      // minWidth: "255px",
+                      height: "255px",
+                      borderRadius: "50%",
+                      backgroundPosition: "center",
+                      backgroundSize: "cover",
+                      backgroundRepeat: "no-repeat",
+                    }}
+                  ></div>
+                </div>
+                <div className={classes.profileImageUploadButtonDiv}>
+                  <div className={classes.profileImageUploadButton}>
+                    <img src={Camera} alt="Upload" />
+                    <label htmlFor="imageUpload" className="ml-2">
+                      Upload
+                    </label>
+                  </div>
+                </div>
+              </label>
+              <input
+                type="file"
+                style={{ display: "none" }}
+                id="imageUpload"
+                onChange={handleUploadImage}
               />
             </div>
           </div>
@@ -284,9 +373,8 @@ const Profile = () => {
                 errorText="Please enter a valid email!"
               />
             </div> */}
-            <div className="d-flex flex-column mb-4">
+            {/* <div className="d-flex flex-column mb-4">
               <label className={classes.formInputLabel}>Phone</label>
-              {/* <input type="text" className={classes.formInputField} /> */}
               <Input
                 id="phone"
                 type="number"
@@ -297,9 +385,9 @@ const Profile = () => {
                 fieldValue={phoneNumber}
                 setField={setPhoneNumber}
               />
-            </div>
+            </div> */}
             <div className="d-flex flex-column mb-4">
-              <label className={classes.formInputLabel}>Address</label>
+              <label className={classes.formInputLabel}>Zip Code</label>
               {/* <input type="text" className={classes.formInputField} /> */}
               <Input
                 id="address"

@@ -1,0 +1,16 @@
+@font-face {
+  font-family: "Open-Sans-Regular";
+  font-style: normal;
+  src: url("./GothamMedium.ttf");
+}
+
+@font-face {
+  font-family: "Open-Sans-Light";
+  font-style: normal;
+  src: url("./Gotham-Light.otf");
+}
+
+:root {
+  --opensans-regular: "Open-Sans-Regular";
+  --opensans-light: "Open-Sans-Light";
+}

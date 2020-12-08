@@ -97,7 +97,7 @@ const Products = (props) => {
     const fetchProduct = async () => {
       console.log("useeffect rinning");
       let searchquery = searchText;
-      if (props.location.state) searchquery = props.location.state.search
+      if (props.location.state) searchquery = props.location.state.search;
       // console.log("props recommended", props.location.state.search ? props.location.state.search : 'nothing');
       let urltoEditandAdd = `/all-products`;
       try {
@@ -163,6 +163,7 @@ const Products = (props) => {
               `align-items-center`,
               classess.headerCoverHeaderDiv,
             ].join(" ")}
+            style={{ minHeight: "80vh" }}
           >
             <h1
               className={[`noMarginBottom`, classess.headerCoverHeading].join(
@@ -189,7 +190,7 @@ const Products = (props) => {
               <input
                 type="text"
                 className={classess.headerCoverSearchInputField}
-                placeholder="What your are looking for?"
+                placeholder="What are you looking for?"
                 value={searchText}
                 onChange={handleChangeSearchText}
               />
@@ -235,128 +236,145 @@ const Products = (props) => {
             <LoadingSpinner />
           </div>
         ) : (
-            <div>
-              <div className="d-flex flex-column mt-5 mb-5">
-                {/* <h4 style={{ color: "#8E5051" }}>Craft Recommended to you</h4> */}
-                <h4 style={{ color: "#8E5051" }}>Crafts Recommended to you</h4>
-                <div className="row">
-                  {/* {product1.map((product, i) => { */}
-                  {products ? products.filter(item => item.crafts).map((product, i) => {
-                    return (
-                      <div
-                        className={[
-                          `col-3`,
-                          `d-flex`,
-                          `mt-4`,
-                          `justify-content-center`,
-                          classes.productDiv,
-                        ].join(" ")}
-                      >
+          <div>
+            <div className="d-flex flex-column mt-5 mb-5">
+              {/* <h4 style={{ color: "#8E5051" }}>Craft Recommended to you</h4> */}
+              <h4 style={{ color: "#8E5051" }}>Crafts Recommended to you</h4>
+              <div className="row">
+                {/* {product1.map((product, i) => { */}
+                {products ? (
+                  products
+                    .filter((item) => item.crafts)
+                    .map((product, i) => {
+                      return (
                         <div
                           className={[
+                            `col-3`,
                             `d-flex`,
+                            `mt-4`,
                             `justify-content-center`,
-                            `flex-column`,
-                            `align-items-center`,
-                            classes.recommendedProduct,
+                            classes.productDiv,
                           ].join(" ")}
                         >
-                          <img
-                            alt={product.title}
-                            src="assets/img/relevant/products1/2.png"
-                            style={{ maxWidth: "154px", maxHeight: "154px" }}
-                          />
-                          <div className="d-flex align-items-baseline">
-                            <div className="mr-4">
-                              <label style={{
-                                fontSize: '17px',
-                                fontWeight: 'bold',
-                                color: '#000',
-                              }}>
-                                {product.product_name}
-                              </label>
+                          <div
+                            className={[
+                              `d-flex`,
+                              `justify-content-center`,
+                              `flex-column`,
+                              `align-items-center`,
+                              classes.recommendedProduct,
+                            ].join(" ")}
+                          >
+                            <img
+                              alt={product.title}
+                              src="assets/img/relevant/products1/2.png"
+                              style={{ maxWidth: "154px", maxHeight: "154px" }}
+                            />
+                            <div className="d-flex align-items-baseline">
+                              <div className="mr-4">
+                                <label
+                                  style={{
+                                    fontSize: "17px",
+                                    fontWeight: "bold",
+                                    color: "#000",
+                                  }}
+                                >
+                                  {product.product_name}
+                                </label>
+                              </div>
+                              <div>
+                                <label
+                                  style={{
+                                    fontSize: "21px",
+                                    fontWeight: "bold",
+                                    color: "brown",
+                                  }}
+                                >
+                                  {`$ ${product.product_price}`}
+                                </label>
+                              </div>
                             </div>
-                            <div >
-                              <label style={{
-                                fontSize: '21px',
-                                fontWeight: 'bold',
-                                color: 'brown',
-                              }}>
-                                {`$ ${product.product_price}`}
-                              </label>
-                            </div>
-
                           </div>
                         </div>
-                      </div>
-                    );
-                  }) : <div className="d-flex justify-content-between">
-                      <h3>No products available</h3>
-                    </div>}
-                </div>
+                      );
+                    })
+                ) : (
+                  <div className="d-flex justify-content-between">
+                    <h3>No products available</h3>
+                  </div>
+                )}
               </div>
-              <div className="d-flex flex-column mt-5 mb-5">
-                {/* <h4 style={{ color: "#8E5051" }}>Craft Recommended to you</h4> */}
-                <h4 style={{ color: "#8E5051" }}>Pros Recommended to you</h4>
-                <div className="row">
-                  {/* {product1.map((product, i) => { */}
-                  {products ? products.filter(item => !item.crafts).map((product, i) => {
-                    return (
-                      <div
-                        className={[
-                          `col-3`,
-                          `d-flex`,
-                          `mt-4`,
-                          `justify-content-center`,
-                          classes.productDiv,
-                        ].join(" ")}
-                      >
-                        <div
-                          className={[
-                            `d-flex`,
-                            `justify-content-center`,
-                            `flex-column`,
-                            `align-items-center`,
-                            classes.recommendedProduct,
-                          ].join(" ")}
-                        >
-                          <img
-                            alt={product.title}
-                            src="assets/img/relevant/products1/2.png"
-                            style={{ maxWidth: "154px", maxHeight: "154px" }}
-                          />
-                          <div className="d-flex align-items-baseline">
-                            <div className="mr-4">
-                              <label style={{
-                                fontSize: '17px',
-                                fontWeight: 'bold',
-                                color: '#000',
-                              }}>
-                                {product.product_name}
-                              </label>
-                            </div>
-                            <div >
-                              <label style={{
-                                fontSize: '21px',
-                                fontWeight: 'bold',
-                                color: 'brown',
-                              }}>
-                                {`$ ${product.product_price}`}
-                              </label>
-                            </div>
-
-                          </div>
-                        </div>
-                      </div>
-                    );
-                  }) : <div className="d-flex justify-content-between">
-                      <h3>No products available</h3>
-                    </div>}
-                </div>
-              </div>
-
             </div>
-          )}
+            <div className="d-flex flex-column mt-5 mb-5">
+              {/* <h4 style={{ color: "#8E5051" }}>Craft Recommended to you</h4> */}
+              <h4 style={{ color: "#8E5051" }}>Pros Recommended to you</h4>
+              <div className="row">
+                {/* {product1.map((product, i) => { */}
+                {products ? (
+                  products
+                    .filter((item) => !item.crafts)
+                    .map((product, i) => {
+                      return (
+                        <div
+                          className={[
+                            `col-3`,
+                            `d-flex`,
+                            `mt-4`,
+                            `justify-content-center`,
+                            classes.productDiv,
+                          ].join(" ")}
+                        >
+                          <div
+                            className={[
+                              `d-flex`,
+                              `justify-content-center`,
+                              `flex-column`,
+                              `align-items-center`,
+                              classes.recommendedProduct,
+                            ].join(" ")}
+                          >
+                            <img
+                              alt={product.title}
+                              src="assets/img/relevant/products1/2.png"
+                              style={{ maxWidth: "154px", maxHeight: "154px" }}
+                            />
+                            <div className="d-flex align-items-baseline">
+                              <div className="mr-4">
+                                <label
+                                  style={{
+                                    fontSize: "17px",
+                                    fontWeight: "bold",
+                                    color: "#000",
+                                  }}
+                                >
+                                  {product.product_name}
+                                </label>
+                              </div>
+                              <div>
+                                <label
+                                  style={{
+                                    fontSize: "21px",
+                                    fontWeight: "bold",
+                                    color: "brown",
+                                  }}
+                                >
+                                  {`$ ${product.product_price}`}
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      );
+                    })
+                ) : (
+                  <div className="d-flex justify-content-between">
+                    <h3>No products available</h3>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+        )}
         {/* <div className="d-flex flex-column mt-5">
           <h4 style={{ color: "#8E5051" }}>Pros Recommended to you</h4>
           <div className="row">

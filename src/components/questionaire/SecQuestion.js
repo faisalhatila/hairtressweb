@@ -1,6 +1,9 @@
 import classes from "./SecQuestion.module.css";
 import React, { useState } from "react";
 import Swal from "sweetalert2";
+import ShortHair from "./ShortHair.png";
+import MediumHair from "./MediumHair.png";
+import LongHair from "./LongHair.png";
 
 const SecQuestion = (props) => {
   const [selectStyle, setselectStyle] = useState();
@@ -8,19 +11,19 @@ const SecQuestion = (props) => {
     {
       id: 1,
       title: "Small",
-      image: "assets/img/relevant/quiz2/Small.png",
+      image: ShortHair,
       answer: 1,
     },
     {
       id: 2,
       title: "Medium",
-      image: "assets/img/relevant/quiz2/Medium.png",
+      image: MediumHair,
       answer: 2,
     },
     {
       id: 3,
       title: "Large",
-      image: "assets/img/relevant/quiz2/Long.png",
+      image: LongHair,
       answer: 3,
     },
   ];
@@ -55,7 +58,8 @@ const SecQuestion = (props) => {
         </div>
         <div
           className="d-flex justify-content-center align-items-center"
-          style={{ height: "635px", transform: "translateY(-14px)" }}
+          // style={{ height: "635px", transform: "translateY(-14px)" }}
+          // style={{ height: "635px", transform: "translateY(-14px)" }}
         >
           <div className="row justify-content-center">
             {hairStyles.map((style, i) => {
