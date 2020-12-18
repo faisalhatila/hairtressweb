@@ -3,26 +3,28 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import LoadingSpinner from "../../shared/UI/LoadingSpinner";
 import Swal from "sweetalert2";
-
+import Bleached from "./Bleached.png";
+import Dyed from "./Dyed.png";
+import PermRelaxer from "./Perm-Relaxer.png";
 const FifthQuestion = (props) => {
   const [selectStyle, setselectStyle] = useState();
   const hairStyles = [
     {
       id: 1,
       title: "Perm/Relaxer",
-      image: "assets/img/relevant/quiz5/bleached.png",
+      image: PermRelaxer,
       answer: 1,
     },
     {
       id: 2,
       title: "Dyed",
-      image: "assets/img/relevant/quiz5/dyed.png",
+      image: Dyed,
       answer: 2,
     },
     {
       id: 3,
       title: "Bleached",
-      image: "assets/img/relevant/quiz5/perm.png",
+      image: Bleached,
       answer: 3,
     },
   ];
@@ -58,7 +60,7 @@ const FifthQuestion = (props) => {
         </div>
         <div
           className="d-flex justify-content-center align-items-center"
-          style={{ height: "635px", transform: "translateY(-45px)" }}
+          style={{ transform: "translateY(-45px)" }}
         >
           <div className="row justify-content-center">
             {hairStyles.map((style, i) => {

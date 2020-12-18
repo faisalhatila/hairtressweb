@@ -54,6 +54,7 @@ const HowItWorks = (props) => {
               key={i}
               className={[
                 `col-12`,
+                `mb-4`,
                 `col-md-4`,
                 `d-flex`,
                 `flex-column`,

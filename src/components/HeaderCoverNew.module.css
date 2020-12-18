@@ -21,16 +21,23 @@
   font-size: 45px;
   font-weight: 600;
   text-transform: uppercase;
+  text-align: center;
+  background-color: rgb(114, 37, 38, 0.6);
+  padding: 0 25px;
 }
 .headerCoverLabel {
   color: #fff;
   text-transform: uppercase;
   font-family: var(--opensans-bold) !important;
   font-size: 25px;
+  background-color: rgb(114, 37, 38, 0.6);
+  padding: 0 25px;
 }
 .headerCoverLabel1 {
   color: #fff;
   text-transform: uppercase;
+  background-color: rgb(114, 37, 38, 0.6);
+  padding: 0 25px;
   /* font-family: var(--opensans-bold) !important;
   font-size: 25px; */
 }

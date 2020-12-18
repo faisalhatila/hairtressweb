@@ -4,6 +4,9 @@ import Swal from "sweetalert2";
 import HairProcessing from "./HairProcessing.jpg";
 import HairProcessing2 from "./HairProcessing2.jpg";
 import HairProcessing3 from "./HairProcessing3.jpg";
+import LowPorosity from "./LowPorosity.png";
+import MediumPorosity from "./MediumPorosity.png";
+import HighPorosity from "./HighPorosity.png";
 
 const FourthQuestion = (props) => {
   const [selectStyle, setselectStyle] = useState();
@@ -11,19 +14,19 @@ const FourthQuestion = (props) => {
     {
       id: 1,
       title: "Low porosity",
-      image: HairProcessing,
+      image: LowPorosity,
       answer: 1,
     },
     {
       id: 2,
       title: "Medium porosity",
-      image: HairProcessing2,
+      image: MediumPorosity,
       answer: 2,
     },
     {
       id: 3,
       title: "High porosity",
-      image: HairProcessing3,
+      image: HighPorosity,
       answer: 3,
     },
   ];
@@ -58,9 +61,9 @@ const FourthQuestion = (props) => {
         </div>
         <div
           className="d-flex justify-content-center align-items-center"
-          style={{ height: "635px", transform: "translateY(-14px)" }}
+          style={{ transform: "translateY(-14px)" }}
         >
-          <div className="row justify-content-center">
+          <div className="row justify-content-center" style={{ flex: 1 }}>
             {hairStyles.map((style, i) => {
               return (
                 <div
@@ -93,7 +96,7 @@ const FourthQuestion = (props) => {
                         </div>
                       )}
                       <img
-                        style={{ maxWidth: "100%" }}
+                        style={{ maxWidth: "210px", maxHeight: "280px" }}
                         alt={style.title}
                         src={style.image}
                       />

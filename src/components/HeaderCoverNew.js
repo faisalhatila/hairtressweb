@@ -7,12 +7,7 @@ const HeaderCoverNew = (props) => {
     <div className={classes.headerCoverMainDiv}>
       <div
         style={{
-          backgroundImage: `linear-gradient(
-      0deg,
-      rgba(190, 104, 77, 0.75),
-      rgba(190, 104, 77, 0.75)
-    ),
-    url(${props.image})`,
+          backgroundImage: `url(${props.image})`,
         }}
         className={classes.headerCoverDiv}
       >
@@ -32,12 +27,20 @@ const HeaderCoverNew = (props) => {
             {props.mainHeading}
           </h1>
           <label
-            className={[`noMarginBottom`, classes.headerCoverLabel].join(" ")}
+            className={[
+              `noMarginBottom`,
+              `mt-2`,
+              classes.headerCoverLabel,
+            ].join(" ")}
           >
             {props.subHeading}
           </label>
           <label
-            className={[`noMarginBottom`, classes.headerCoverLabel1].join(" ")}
+            className={[
+              `noMarginBottom`,
+              `mt-2`,
+              classes.headerCoverLabel1,
+            ].join(" ")}
           >
             {props.text}
           </label>

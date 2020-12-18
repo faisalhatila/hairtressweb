@@ -8,6 +8,8 @@ import { useAuth } from "../shared/hooks/auth-hooks";
 import { useHttpClient } from "../shared/hooks/http-hook";
 import { useHistory } from "react-router-dom";
 import userIcon from "./user.svg";
+import classes from "./Navbar.module.css";
+
 const Navbar = () => {
   const history = useHistory();
   const myData = JSON.parse(localStorage.getItem("userDatas"));
@@ -157,7 +159,7 @@ const Navbar = () => {
                   </Link>
                 </li>
                 <li class="navbarItems">
-                  <Link to="/" className="tressNavItems">
+                  <Link to="/about-us" className="tressNavItems">
                     ABOUT US
                   </Link>
                 </li>
@@ -167,8 +169,8 @@ const Navbar = () => {
                   </Link>
                 </li>
                 <li className="navbarItems">
-                  <Link to="/recommeded-product" className="tressNavItems">
-                    THE PRODUCTS
+                  <Link to="/products" className="tressNavItems">
+                    PRODUCTS
                   </Link>
                 </li>
                 {/* <li className="navbarItems">
@@ -178,13 +180,13 @@ const Navbar = () => {
                 </li> */}
                 <li className="navbarItems">
                   <Link to="/the-pros" className="tressNavItems">
-                    THE PROS
+                    PROS
                   </Link>
                 </li>
 
                 <li className="navbarItems">
                   <Link to="/the-study" className="tressNavItems">
-                    THE STUDY
+                    STUDY
                   </Link>
                 </li>
 
@@ -200,24 +202,40 @@ const Navbar = () => {
           {/* </div>{" "} */}
           <nav id="mobile-nav">
             <ul className="" style={{ touchAction: "pan-y" }}>
-              <li>
+              <li onClick={handleClick}>
                 <Link to="/">HOME</Link>
               </li>
-              <li>
-                <Link to="/craft-products">THE CRAFTS</Link>
+              <li onClick={handleClick}>
+                <Link to="/about-us">ABOUT US</Link>
               </li>
-              <li>
-                <Link to="/the-pros">THE PROS</Link>
+              <li onClick={handleClick}>
+                <Link to="/craft-products">CRAFTS</Link>
               </li>
-              <li>
-                <Link to="/recommeded-product">THE PRODUCTS</Link>
+              <li onClick={handleClick}>
+                <Link to="/the-pros">PROS</Link>
               </li>
-              <li>
-                <Link to="/the-study">THE STUDY</Link>
+              <li onClick={handleClick}>
+                <Link to="/products">PRODUCTS</Link>
               </li>
-              <li>
+              <li onClick={handleClick}>
+                <Link to="/the-study">STUDY</Link>
+              </li>
+              <li onClick={handleClick}>
                 <Link to="/questionaire">QUIZ</Link>
               </li>
+              <li onClick={handleClick}>
+                <Link to="/profile">MY PROFILE</Link>
+              </li>
+              {myData && (
+                <li className={classes.LogoutButton} onClick={handleLogout}>
+                  Logout
+                </li>
+              )}
+              {!myData && (
+                <li>
+                  <Link to="/login">Login</Link>
+                </li>
+              )}
               {/* <li>
                 <Link to="/cart">
                   My Cart

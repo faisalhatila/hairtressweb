@@ -1,8 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import classes from "./ServiceDesc.module.css";
-import TheStudy from "./TheStudy.png";
-import ThePros from "./ThePros.png";
+// import TheStudy from "./TheStudy.png";
+// import ThePros from "./ThePros.png";
+// import TheProducts from "./TheProducts.png";
+import TheStudy from "./TheStudy1.png";
+import ThePros from "./ThePros1.png";
+import TheProducts from "./TheProducts1.png";
+import TheCraft from "./TheCraft.png";
 
 const ServiceDesc = (props) => {
   const serviceDesc = [
@@ -11,16 +16,16 @@ const ServiceDesc = (props) => {
       title: "The Products",
       para:
         "Looking for products to add to your regimen? Check out shampoos, conditioners, leave-ins and more",
-      image: "assets/img/relevant/serviceDesc/theProducts.png",
-      link: "/recommeded-product",
+      image: TheProducts,
+      link: "/products",
     },
     {
       id: 1,
       title: "The Craft",
       para:
         "Whether you’re looking for a new style for a big event, vacation or simply to protect your edges, we got you covered. Check out these tutorials.",
-      image: "assets/img/relevant/serviceDesc/theCraft.png",
-      link: "/",
+      image: TheCraft,
+      link: "/craft-products",
     },
     {
       id: 2,
@@ -28,7 +33,7 @@ const ServiceDesc = (props) => {
       para:
         "Struggling to find a salon that works for you? Find local salons here.",
       image: ThePros,
-      link: "/",
+      link: "/the-pros",
     },
     {
       id: 3,
@@ -56,7 +61,11 @@ const ServiceDesc = (props) => {
                 classes.serviceDescDiv,
               ].join(" ")}
             >
-              <Link style={{ minWidth: "100%" }} key={i} to={service.link}>
+              <Link
+                style={{ minWidth: "100%", position: "relative" }}
+                key={i}
+                to={service.link}
+              >
                 <div
                   className={[`col`, classes.serviceDivOverlay].join(" ")}
                 ></div>

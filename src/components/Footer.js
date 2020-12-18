@@ -85,56 +85,68 @@ const Footer = (props) => {
                   </div>
                 );
               })} */}
-              <div
-                className={[
-                  `mr-3`,
-                  `d-flex`,
-                  `justify-content-center`,
-                  `align-items-center`,
-                  classes.iconDiv,
-                ].join(" ")}
-              >
-                <div>
-                  <i
-                    class={[`fab`, `fa-facebook-f`, classes.socialIcon].join(
-                      " "
-                    )}
-                  ></i>
+              <a href="https://m.facebook.com/tresshairco/" target="_blank">
+                <div
+                  className={[
+                    `mr-3`,
+                    `d-flex`,
+                    `justify-content-center`,
+                    `align-items-center`,
+                    classes.iconDiv,
+                  ].join(" ")}
+                >
+                  <div>
+                    <i
+                      class={[`fab`, `fa-facebook-f`, classes.socialIcon].join(
+                        " "
+                      )}
+                    ></i>
+                  </div>
                 </div>
-              </div>
-              <div
-                className={[
-                  `mr-3`,
-                  `d-flex`,
-                  `justify-content-center`,
-                  `align-items-center`,
-                  classes.iconDiv,
-                ].join(" ")}
+              </a>
+              <a
+                target="_blank"
+                href="https://www.instagram.com/tresshairco/?hl=en"
               >
-                <div>
-                  <i
-                    class={[`fab`, `fa-instagram`, classes.socialIcon].join(
-                      " "
-                    )}
-                  ></i>
+                <div
+                  className={[
+                    `mr-3`,
+                    `d-flex`,
+                    `justify-content-center`,
+                    `align-items-center`,
+                    classes.iconDiv,
+                  ].join(" ")}
+                >
+                  <div>
+                    <i
+                      class={[`fab`, `fa-instagram`, classes.socialIcon].join(
+                        " "
+                      )}
+                    ></i>
+                  </div>
                 </div>
-              </div>
-              <div
-                className={[
-                  `mr-3`,
-                  `d-flex`,
-                  `justify-content-center`,
-                  `align-items-center`,
-                  classes.iconDiv,
-                ].join(" ")}
+              </a>
+              <a
+                target="_blank"
+                href="https://www.tiktok.com/@tresshairco?_d=secCgsIARCbDRgBIAIoARI%2BCjxu4Vx7v%2Bs1CCvPl4IHdcMd5wYdcRQvkVHInueZc9EEJfcJRt3tl4whCP4u8u8BIKJjkQaUPpomorbK4qgaAA%3D%3D&language=en&sec_uid=MS4wLjABAAAA-yoQWBr3xqdeRnMhvAlMQFfZAajh4ADpyKoN1FkJG7HbTEgrAYKsgnrLaq0GDpgO&sec_user_id=MS4wLjABAAAA-yoQWBr3xqdeRnMhvAlMQFfZAajh4ADpyKoN1FkJG7HbTEgrAYKsgnrLaq0GDpgO&share_author_id=6895030289823695877&share_link_id=EDD6B1AF-AF6B-425A-B226-7CEC5DEB57C8&tt_from=sms&u_code=dfec0mbl341b79&user_id=6895030289823695877&utm_campaign=client_share&utm_medium=ios&utm_source=sms&source=h5_m
+                "
               >
-                <div>
-                  <i
-                    class={[`fab`, `fa-tiktok`, classes.socialIcon].join(" ")}
-                  ></i>
-                  {/* <img src={TikTok} alt="TIKTOK" /> */}
+                <div
+                  className={[
+                    `mr-3`,
+                    `d-flex`,
+                    `justify-content-center`,
+                    `align-items-center`,
+                    classes.iconDiv,
+                  ].join(" ")}
+                >
+                  <div>
+                    <i
+                      class={[`fab`, `fa-tiktok`, classes.socialIcon].join(" ")}
+                    ></i>
+                  </div>
                 </div>
-              </div>
+              </a>
             </div>
           </div>
           <div className="col-12 col-md-2">

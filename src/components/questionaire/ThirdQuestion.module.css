@@ -6,19 +6,18 @@
   background-color: #f6eae0;
   border: solid 2px #888;
   border-radius: 30px;
-  height: 724px;
+  /* height: 724px; */
 }
 .selectOverlay {
-  height: 82px;
-  width: 82px;
+  height: 190px;
+  width: 190px;
   background-color: #000;
   border-radius: 50%;
   position: absolute;
   opacity: 0.5;
-  top: 30%;
 }
 .selectOverlay > i {
-  font-size: 25px;
+  font-size: 45px;
   color: #fff;
 }
 .hairStyleDiv {
@@ -28,11 +27,12 @@
   padding: 10px 30px;
   transition: all 0.3s ease;
   border-radius: 15px;
-  max-width: 228px;
-  max-height: 248px;
+  max-width: 250px;
+  max-height: 250px;
 }
 .hairImage {
-  max-width: 100%;
+  max-width: 190px;
+  max-height: 190px;
 }
 
 .hairStyleDiv:hover .styleWrapperDiv {

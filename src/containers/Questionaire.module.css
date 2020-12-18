@@ -16,4 +16,5 @@
   font-family: var(--opensans-bold) !important;
   /* font-family: serif; */
   font-weight: 600;
+  font-size: 5vh !important;
 }

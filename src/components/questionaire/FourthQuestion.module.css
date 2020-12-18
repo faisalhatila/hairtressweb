@@ -6,7 +6,7 @@
   background-color: #f6eae0;
   border: solid 2px #888;
   border-radius: 30px;
-  height: 724px;
+  /* height: 724px; */
 }
 .selectOverlay {
   height: 82px;
@@ -15,7 +15,7 @@
   border-radius: 50%;
   position: absolute;
   opacity: 0.5;
-  top: 30%;
+  top: 24%;
 }
 .selectOverlay > i {
   font-size: 25px;

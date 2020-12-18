@@ -2,9 +2,6 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { head } from "lodash";
 import HeaderCover from "../components/HeaderCover";
-import CareerNeeds from "../components/ourservices/CareerNeeds";
-import GroupSessions from "../components/ourservices/GroupSessions";
-import IndividualServices from "../components/ourservices/IndividualServices";
 import AboutTress from "../components/home/AboutTress";
 import ServiceDesc from "../components/home/ServiceDesc";
 import HowItWorks from "../components/home/HowItWorks";
@@ -20,6 +17,7 @@ import { useAuth } from "../shared/hooks/auth-hooks";
 import { useHttpClient } from "../shared/hooks/http-hook";
 import { useHistory } from "react-router-dom";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 
 const Questionaire = () => {
   const history = useHistory();
@@ -96,15 +94,22 @@ const Questionaire = () => {
         text: "Quiz submitted",
         icon: "success",
         confirmButtonText: "Ok",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          history.go("/");
+          history.push("/");
+        }
       });
-      history.go("/");
-      history.push("/");
     } catch (err) {
       console.log(err.message);
     }
   };
   return (
     <div>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Quiz</title>
+      </Helmet>
       <HeaderCoverNew
         image={image}
         mainHeading="Protect your hair"
@@ -119,10 +124,28 @@ const Questionaire = () => {
           TRESS : HAIR QUIZ
         </h1>
         {quesStep === 1 && (
+          // <FourthQuestion
+          //   handleFourthAnswer={handleFourthAnswer}
+          //   next={handleGoToNextQues}
+          // />
+          // <FifthQuestion
+          //   loading={isLoading}
+          //   handleSubmit={handleSubmit}
+          //   handleFifthAnswer={handleFifthAnswer}
+          //   next={handleGoToNextQues}
+          // />
           <FirstQuestion
             handleFirstAnswer={handleFirstAnswer}
             next={handleGoToNextQues}
           />
+          // <ThirdQuestion
+          //   handleThirdAnswer={handleThirdAnswer}
+          //   next={handleGoToNextQues}
+          // />
+          // <SecQuestion
+          //   handleSecAnswer={handleSecAnswer}
+          //   next={handleGoToNextQues}
+          // />
         )}
         {quesStep === 2 && (
           <SecQuestion

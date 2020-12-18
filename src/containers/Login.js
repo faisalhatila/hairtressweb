@@ -7,6 +7,7 @@ import { AuthContext } from "../shared/context/index";
 import { useHistory } from "react-router-dom";
 import Input from "../shared/UI/Input";
 import LoadingSpinner from "../shared/UI/LoadingSpinner";
+import { Helmet } from "react-helmet";
 const FORM_INPUT_UPDATE = "FORM_INPUT_UPDATE";
 
 const formReducer = (state, action) => {
@@ -101,6 +102,7 @@ const LoginContainer = () => {
             userFirstName: responseData.fname,
             userLastName: responseData.lname,
             userEmail: responseData.email,
+            quiz: responseData.quiz,
             // userId: responseData.userId,
             // token: responseData.token,
           })
@@ -128,6 +130,10 @@ const LoginContainer = () => {
         classes.loginFormMainContainer,
       ].join(" ")}
     >
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Login</title>
+      </Helmet>
       <div
         className={[
           `d-flex`,

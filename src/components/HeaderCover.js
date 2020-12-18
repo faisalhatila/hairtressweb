@@ -28,12 +28,7 @@ const HeaderCover = (props) => {
     <div className={classes.headerCoverMainDiv}>
       <div
         style={{
-          backgroundImage: `linear-gradient(
-      0deg,
-      rgba(190, 104, 77, 0.75),
-      rgba(190, 104, 77, 0.75)
-    ),
-    url(${props.image})`,
+          backgroundImage: `url(${props.image})`,
         }}
         className={classes.headerCoverDiv}
       >
@@ -54,7 +49,11 @@ const HeaderCover = (props) => {
             Easy. Efficient. Economical
           </h1>
           <label
-            className={[`noMarginBottom`, classes.headerCoverLabel].join(" ")}
+            className={[
+              `noMarginBottom`,
+              `mt-2`,
+              classes.headerCoverLabel,
+            ].join(" ")}
           >
             Because it’s personal
           </label>
@@ -84,20 +83,14 @@ const HeaderCover = (props) => {
                   "d-flex",
                   "align-items-center",
                 ].join(" ")}
-                style={{
-                  backgroundColor: "transparent",
-                  border: "none",
-                }}
                 type="submit"
                 // onClick={props.searchResult(searchText)}
               >
-                {/* <Link to="/recommeded-product"> */}
                 <img
                   className={classes.headerCoverSearchButton}
                   alt="search"
                   src={search}
                 />
-                {/* </Link> */}
               </button>
             </form>
           </div>

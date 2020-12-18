@@ -1,26 +1,65 @@
 @import "../constants/fonts/fonts.css";
 
-.getStartButton {
-  font-family: var(--opensans-bold) !important;
-  background-color: #722526;
-  color: #f1af43;
-  width: 150px;
-  padding: 9px 0;
-  border-radius: 25px;
+.theProductImage {
+  width: 153px;
+  height: 153px;
+  background-position: inherit;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 20px;
 }
-.getStartTagLine {
-  font-family: var(--opensans-bold) !important;
+.theProductHeading {
+  font-size: 20px;
+  /* font-family: var(--opensans-bold) !important; */
+  color: #772e30;
+}
+.theProductPara {
+  font-size: 23px;
+  max-width: 510px;
   color: #000;
 }
-.recommendedProduct {
-  flex: 1;
-  /* border: solid 1px #ccc; */
-  border-radius: 5px;
-  cursor: pointer;
-  transition: all 0.3s ease;
+.headerCoverSearchDiv {
+  min-width: 70%;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 10px;
+  border-radius: 30px;
+  border: solid 1px #000;
 }
-
-.recommendedProduct:hover {
-  box-shadow: 0px 3px 5px 0px #ccc;
-  transform: translateY(-5px);
+.headerCoverSearchInputField {
+  flex: 1;
+  background-color: transparent;
+  border: none;
+  color: #000;
+}
+.headerCoverSearchInputField::placeholder {
+  color: #888;
+}
+.headerCoverSearchInputField:focus {
+  outline: none;
+}
+.headerCoverSearchButton {
+  background-color: #f1af43;
+  padding: 7px;
+  border-radius: 50%;
+}
+.theStudyDummyHeading {
+  font-size: 20px;
+  /* font-family: var(--opensans-bold) !important; */
+  color: #772e30;
+  background-color: rgb(119, 46, 48, 0.4);
+  height: 30px;
+  width: 240px;
+}
+.loadMoreButton {
+  background-color: #722526;
+  color: #f1af43;
+  border: none;
+  padding: 5px 15px;
+  border-radius: 5px;
+  transition: all 0.5s ease;
+  /* cursor: pointer; */
+}
+.loadMoreButton:hover {
+  background-color: #f1af43;
+  color: #722526;
 }

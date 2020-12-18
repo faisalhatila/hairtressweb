@@ -9,16 +9,16 @@
   /* height: 724px; */
 }
 .selectOverlay {
-  height: 82px;
-  width: 82px;
+  height: 331px;
+  width: 127px;
   background-color: #000;
-  border-radius: 50%;
+  border-radius: 10px;
   position: absolute;
   opacity: 0.5;
-  top: 30%;
+  top: 0%;
 }
 .selectOverlay > i {
-  font-size: 25px;
+  font-size: 55px;
   color: #fff;
 }
 .hairStyleDiv {

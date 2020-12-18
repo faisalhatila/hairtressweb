@@ -58,7 +58,7 @@ const ThirdQuestion = (props) => {
         </div>
         <div
           className="d-flex justify-content-center align-items-center"
-          style={{ height: "635px", transform: "translateY(-45px)" }}
+          style={{ transform: "translateY(-45px)" }}
         >
           <div className="row justify-content-center">
             {hairStyles.map((style, i) => {
@@ -71,7 +71,7 @@ const ThirdQuestion = (props) => {
                     `justify-content-center`,
                     `flex-column`,
                     `align-items-center`,
-                    `mt-4`,
+                    `my-4`,
                     classes.hairStyleDiv,
                   ].join(" ")}
                   key={i}

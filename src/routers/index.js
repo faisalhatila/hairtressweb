@@ -5,19 +5,11 @@ import PageNotFound from "../containers/404";
 import Route from "./route";
 import PvtRoute from "./privateRoute";
 import LoginContainer from "../containers/Login";
-import LoginForm from "../containers/LoginForm";
-import SignUpForm from "../containers/SignUpForm";
 import { AboutUs } from "../containers/AboutUs";
-import OurServices from "../containers/OurServices";
-import OurCrew from "../containers/OurCrew";
-import Resources from "../containers/Resources";
-import Community from "../containers/Community";
-import CommunityPostDetail from "../containers/CommunityPostDetail";
-import ContactUs from "../containers/ContactUs";
 import SignUp from "../containers/SignUp";
 import Questionaire from "../containers/Questionaire";
 import RecommendedProduct from "../containers/RecommendedProduct";
-import Products from "../containers/RecommendedProduct";
+import Products from "../containers/Products";
 import CraftProducts from "../containers/CraftProducts";
 import ThePros from "../containers/ThePros";
 import TheStudy from "../containers/TheStudy";
@@ -36,11 +28,16 @@ const Router = (props) => {
           path="/questionaire"
           component={() => <Redirect to="/login" />}
         />
+        {/* <Route exact path="/questionaire" component={Questionaire} /> */}
         <Route
           exact
           path="/recommeded-product"
           component={RecommendedProduct}
         />
+        <Route exact path="/all-results" component={RecommendedProduct} />
+        <Route exact path="/results" component={RecommendedProduct} />
+        <Route exact path="/about-us" component={AboutUs} />
+        <Route exact path="/products" component={Products} />
         <Route exact path="/craft-products" component={CraftProducts} />
         <Route exact path="/the-pros" component={ThePros} />
         <Route exact path="/the-study" component={TheStudy} />
@@ -58,11 +55,10 @@ const Router = (props) => {
       <Switch>
         <Route exact path="/" component={HomeContainer} />
         <Route exact path="/questionaire" component={Questionaire} />
-        <Route
-          exact
-          path="/recommeded-product"
-          component={RecommendedProduct}
-        />
+        <Route exact path="/all-results" component={RecommendedProduct} />
+        <Route exact path="/results" component={RecommendedProduct} />
+        <Route exact path="/about-us" component={AboutUs} />
+        <Route exact path="/products" component={Products} />
         <Route exact path="/craft-products" component={CraftProducts} />
         <Route exact path="/the-pros" component={ThePros} />
         <Route exact path="/the-study" component={TheStudy} />

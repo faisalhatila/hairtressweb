@@ -20,6 +20,7 @@ import LoadingSpinner from "../shared/UI/LoadingSpinner";
 import Camera from "./Camera.png";
 import AWS from "aws-sdk";
 import S3FileUpload from "react-s3";
+import { Helmet } from "react-helmet";
 const FORM_INPUT_UPDATE = "FORM_INPUT_UPDATE";
 const formReducer = (state, action) => {
   if (action.type === FORM_INPUT_UPDATE) {
@@ -52,6 +53,7 @@ const Profile = () => {
   const [lastName, setLastName] = useState("");
   const [address, setAddress] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
+  const [userProfileImage, setUserProfileImage] = useState();
   const { isLoading, error, sendRequest, clearError } = useHttpClient();
   const { userId, token } = useAuth();
   const history = useHistory();
@@ -95,12 +97,12 @@ const Profile = () => {
     console.log("fname", formState.inputValues.firstName);
     console.log("lname", formState.inputValues.lastName);
     console.log("address", formState.inputValues.address);
-    console.log("phone", formState.inputValues.phone);
+    // console.log("phone", formState.inputValues.phone);
     if (
       formState.inputValues.firstName.length <= 0 ||
       formState.inputValues.lastName.length <= 0 ||
-      formState.inputValues.address.length <= 0 ||
-      formState.inputValues.phone.length <= 0
+      formState.inputValues.address.length <= 0
+      // formState.inputValues.phone.length <= 0
     ) {
       Swal.fire({
         title: "Error",
@@ -110,26 +112,34 @@ const Profile = () => {
       });
     } else {
       console.log("clicked");
+      let formData = new FormData();
+      formData.append("userId", userId);
+      formData.append("fname", firstName);
+      formData.append("lname", lastName);
+      formData.append("address", address);
+      formData.append("picture", userProfileImage);
       try {
         const responseData = await sendRequest(
           `${process.env.REACT_APP_BACKEND_URL}/change-information`,
           "POST",
           {
-            "Content-Type": "application/json",
+            // "Content-Type": "multipart/form-data",
             Authorization: "Bearer " + token,
           },
-          JSON.stringify({
-            userId,
-            fname: formState.inputValues.firstName,
-            lname: formState.inputValues.lastName,
-            address: formState.inputValues.address,
-            phone_number: formState.inputValues.phone,
-            // picture:formState.inputValues.firstName,
+          formData
+          // JSON.stringify({
+          //   userId,
+          //   fname: formState.inputValues.firstName,
+          //   lname: formState.inputValues.lastName,
+          //   address: formState.inputValues.address,
+          //   // phone_number: formState.inputValues.phone,
+          //   // picture:formState.inputValues.firstName,
 
-            // email: formState.inputValues.email,
-            // password: formState.inputValues.password,
-          })
+          //   // email: formState.inputValues.email,
+          //   // password: formState.inputValues.password,
+          // })
         );
+        console.log("responseData", responseData);
         // history.go("/");
         // history.push("/");
         Swal.fire({
@@ -164,27 +174,67 @@ const Profile = () => {
     }
   };
   const handleUploadImage = async (e) => {
-    const file = e.target.files[0];
+    let file = e.target.files[0];
+    setUserProfileImage(file);
     setimageUpload(URL.createObjectURL(file));
-    setNewImage(true);
-    console.log(URL.createObjectURL(file));
-    const base64 = await convertToBase64(file);
-    // console.log("base64", base64);
-    const ID = "AKIAJP3OXKCZZTES7T4Q";
-    const SECRET = "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";
-    const BUCKET_NAME_IMAGES = "images-rizipt";
-    const BUCKET_REGION = "US West (N. California) us-west-1";
+    return;
+    // // file = { ...file, name: file.name.replace(" ", "858585") };
+    // // console.log("file", file.name.replace(" ", "858585"));
+    // console.log("file", file);
+    // // return;
+    // const d = new Date();
+    // const n = d.getTime();
+    // let tempFileObj = {
+    //   lastModified: file.lastModified,
+    //   lastModifiedDate: file.lastModifiedDate,
+    //   name: `${userId}${n}${file.name.replace(" ", "-")}`,
+    //   size: file.size,
+    //   type: file.type,
+    //   webkitRelativePath: file.webkitRelativePath,
+    // };
+    // setimageUpload(URL.createObjectURL(file));
+    // setNewImage(true);
+    // console.log("tempFile", file);
+    // const base64 = await convertToBase64(file);
+    // const ID = "AKIAJP3OXKCZZTES7T4Q";
+    // const SECRET = "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";
+    // const BUCKET_NAME_IMAGES = "images-hairtress";
+    // const BUCKET_REGION = "us-west-1";
 
-    const config = {
-      bucketName: BUCKET_NAME_IMAGES,
-      region: BUCKET_REGION,
-      accessKeyId: ID,
-      secretAccessKey: SECRET,
-    };
-    S3FileUpload.uploadFile(file, config)
-      .then((data) => console.log("dataLocation", data.location))
-      .catch((err) => console.log("error", err));
+    // const config = {
+    //   bucketName: BUCKET_NAME_IMAGES,
+    //   dirName: "images",
+    //   region: BUCKET_REGION,
+    //   accessKeyId: ID,
+    //   secretAccessKey: SECRET,
+    // };
+    // S3FileUpload.uploadFile(base64, config)
+    //   .then((data) => console.log("dataLocation", data.location))
+    //   .catch((err) => console.log("error", err));
   };
+  // const handleUploadImage = async (e) => {
+  //   let file = e.target.files[0];
+  //   setimageUpload(URL.createObjectURL(file));
+  //   setNewImage(true);
+  //   console.log(URL.createObjectURL(file));
+  //   const base64 = await convertToBase64(file);
+  //   // console.log("base64", base64);
+  //   const ID = "AKIAJP3OXKCZZTES7T4Q";
+  //   const SECRET = "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";
+  //   const BUCKET_NAME_IMAGES = "images-hairtress";
+  //   const BUCKET_REGION = "us-west-1";
+
+  //   const config = {
+  //     bucketName: BUCKET_NAME_IMAGES,
+  //     dirName: "images",
+  //     region: BUCKET_REGION,
+  //     accessKeyId: ID,
+  //     secretAccessKey: SECRET,
+  //   };
+  //   S3FileUpload.uploadFile(file, config)
+  //     .then((data) => console.log("dataLocation", data.location))
+  //     .catch((err) => console.log("error", err));
+  // };
   const convertToBase64 = (file) => {
     return new Promise((resolve, reject) => {
       const fileReader = new FileReader();
@@ -197,28 +247,6 @@ const Profile = () => {
       };
     });
   };
-  // useEffect(() => {
-  //   console.log("hello bhai", userId);
-  //   const getData = async () => {
-  //     try {
-  //       const responseData = await sendRequest(
-  //         `${process.env.REACT_APP_BACKEND_URL}/get-user`,
-  //         "POST",
-  //         {
-  //           "Content-Type": "application/json",
-  //           Authorization: "Bearer " + token,
-  //         },
-  //         JSON.stringify({
-  //           userId,
-  //         })
-  //       );
-  //       console.log("userResponseData", responseData);
-  //     } catch (err) {
-  //       console.log("error", err.message);
-  //     }
-  //   };
-  //   getData();
-  // }, []);
   useEffect(() => {
     console.log("gettingData", userId, token);
     const getData = async () => {
@@ -239,6 +267,7 @@ const Profile = () => {
         setLastName(responseData.user.lname);
         setAddress(responseData.user.address);
         setPhoneNumber(responseData.user.phone_number);
+        setimageUpload(responseData.user.picture);
       } catch (err) {
         console.log("err", err);
         console.log("error", err.message);
@@ -250,6 +279,10 @@ const Profile = () => {
   const load = <LoadingSpinner />;
   return (
     <div>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Profile</title>
+      </Helmet>
       <HeaderCoverProfile image={image} />
       <div className="container">
         <div
@@ -261,7 +294,7 @@ const Profile = () => {
             classes.profileInfoRow,
           ].join(" ")}
         >
-          <div className={[`col-6`, `col-md-3`].join(" ")}>
+          <div className={[`col-12`, `col-md-3`].join(" ")}>
             <div className={classes.profileImageDiv}>
               <label
                 htmlFor="imageUpload"
@@ -274,24 +307,12 @@ const Profile = () => {
                 }}
               >
                 <div style={{ width: "100%" }}>
-                  {/* <img
-                    alt="User"
-                    // src="assets/img/relevant/profile/profileImage.png"
-                    // src="https://cdn1.iconfinder.com/data/icons/avatar-97/32/avatar-02-512.png"
-                    src={imageUpload} // onClick={handleUploadImage}
-                    style={{
-                      width: "100%",
-                      // minWidth: "255px",
-                      height: "255px",
-                      borderRadius: "50%",
-                    }}
-                  /> */}
                   <div
                     style={{
                       backgroundImage: `url(${imageUpload})`,
-                      width: "100%",
+                      width: "205px",
                       // minWidth: "255px",
-                      height: "255px",
+                      height: "205px",
                       borderRadius: "50%",
                       backgroundPosition: "center",
                       backgroundSize: "cover",
@@ -316,10 +337,9 @@ const Profile = () => {
               />
             </div>
           </div>
-          <div className={[`col-6`, `col-md-3`].join(" ")}>
+          <div className={[`col-12`, `col-md-6`, `col-md-3`].join(" ")}>
             <div className={classes.profileInfoDiv}>
               <h2 className="noMarginBottom">{`${firstName} ${lastName}`}</h2>
-              <label>Lorem ipsum</label>
             </div>
           </div>
         </div>

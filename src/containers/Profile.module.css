@@ -6,12 +6,12 @@
   cursor: pointer;
   /* border: 2px solid rgba(114, 37, 38, 0.9); */
   border-radius: 50%;
-  width: 255px !important;
-  height: 255px !important;
+  width: 205px !important;
+  height: 205px !important;
 }
 .profileImageDiv > img {
-  max-width: 255px;
-  max-height: 255px;
+  max-width: 205px;
+  max-height: 205px;
 }
 .profileInfoDiv > h2 {
   color: #772e30;
@@ -78,9 +78,9 @@
 .profileImageUploadButtonDiv {
   position: absolute;
   cursor: pointer;
-  bottom: 0;
-  height: 255px;
-  width: 255px;
+  /* bottom: 0; */
+  height: 205px;
+  width: 205px;
   text-align: center;
   display: flex;
   justify-content: center;

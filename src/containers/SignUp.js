@@ -7,6 +7,7 @@ import { useHistory } from "react-router-dom";
 import Input from "../shared/UI/Input";
 import LoadingSpinner from "../shared/UI/LoadingSpinner";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 const FORM_INPUT_UPDATE = "FORM_INPUT_UPDATE";
 const formReducer = (state, action) => {
   if (action.type === FORM_INPUT_UPDATE) {
@@ -125,6 +126,10 @@ const SignUp = () => {
         classes.loginFormMainContainer,
       ].join(" ")}
     >
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Signup</title>
+      </Helmet>
       <div
         className={[
           `d-flex`,

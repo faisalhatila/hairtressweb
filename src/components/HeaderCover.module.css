@@ -20,17 +20,24 @@
 }
 .headerCoverHeading {
   color: #fff;
-  /* font-size: 55px; */
-  /* font-weight: 600; */
+  font-size: 45px;
+  font-weight: 600;
   text-transform: uppercase;
+  text-align: center;
+  background-color: rgb(114, 37, 38, 0.8);
+  padding: 0 25px;
 }
 .headerCoverLabel {
   color: #fff;
   text-transform: uppercase;
+  background-color: rgb(114, 37, 38, 0.8);
+  font-weight: 600;
+  padding: 0 25px;
+  border-radius: 15px;
 }
 .headerCoverSearchDiv {
   min-width: 70%;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgb(114, 37, 38, 0.8);
   padding: 3px 12px 3px 16px;
   border-radius: 30px;
   border: solid 1px #fff;
@@ -67,6 +74,11 @@
 .headerCoverRegisterButton:hover {
   color: #f1af43;
   background-color: #722526;
+}
+.headerSearchButton {
+  background-color: transparent;
+  border: none;
+  transform: translate(13px, 0px);
 }
 .headerSearchButton:focus {
   outline: none;

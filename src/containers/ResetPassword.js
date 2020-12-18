@@ -15,6 +15,7 @@ import { useHistory } from "react-router-dom";
 import Input from "../shared/UI/Input";
 import LoadingSpinner from "../shared/UI/LoadingSpinner";
 import { useParams } from "react-router-dom";
+import { Helmet } from "react-helmet";
 const FORM_INPUT_UPDATE = "FORM_INPUT_UPDATE";
 
 const formReducer = (state, action) => {
@@ -188,6 +189,10 @@ const ResetPassword = () => {
         classes.loginFormMainContainer,
       ].join(" ")}
     >
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Reset Password</title>
+      </Helmet>
       <div
         className={[
           `d-flex`,
